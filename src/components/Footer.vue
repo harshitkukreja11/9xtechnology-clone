@@ -63,4 +63,42 @@ span {
 .icon-button:hover {
   transform: scale(1.1);
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-text {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .icon-button {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .icon-button img {
+    width: 16px;
+    height: 16px;
+  }
+}
 </style>

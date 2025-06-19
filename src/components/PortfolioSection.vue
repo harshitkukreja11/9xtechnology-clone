@@ -128,4 +128,51 @@ const showGrabberImage = ref(true)
 .online-btn:hover {
   background-color: #e0b800;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .highlight {
+    font-size: 1.5rem;
+  }
+
+  .ceo-name {
+    font-size: 1rem;
+  }
+
+  .floating-widget {
+    width: 90px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .online-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .grabber-img {
+    width: 100%;
+  }
+
+  .close-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlight {
+    font-size: 1.2rem;
+  }
+}
 </style>

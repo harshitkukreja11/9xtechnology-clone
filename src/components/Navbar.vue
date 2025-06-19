@@ -10,14 +10,15 @@
       </button>
 
       <nav :class="{ open: isMenuOpen }">
-        <router-link to="/" :class="{ active: isActive('/') }" @click="closeMenu">HOME</router-link>
-                <router-link to="/#about" :class="{ active: isActive('/#about') }" @click="closeMenu">ABOUT US</router-link>
-        <router-link to="/#services" :class="{ active: isActive('/#services') }" @click="closeMenu">SERVICES</router-link>
-        <router-link to="/#portfolio" :class="{ active: isActive('/#portfolio') }" @click="closeMenu">PROJECTS</router-link>
-             <router-link to="/#careers" :class="{ active: isActive('/#careers') }" @click="closeMenu">CAREERS</router-link>
+  <router-link to="/" :class="{ active: isActive('/') }" @click="closeMenu">HOME</router-link>
 
-        <router-link to="/#contact" :class="{ active: isActive('/#contact') }" @click="closeMenu">CONTACT US</router-link>
-      </nav>
+  <a href="About" @click="closeMenu">ABOUT US</a>
+  <a href="Services" @click="closeMenu">SERVICES</a>
+  <a href="Projects" @click="closeMenu">PROJECTS</a>
+  <a href="#careers" @click="closeMenu">CAREERS</a>
+  <a href="#contact" @click="closeMenu">CONTACT US</a>
+</nav>
+
     </div>
   </header>
 </template>
@@ -48,7 +49,7 @@ const isActive = (path) => {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,10 +57,12 @@ const isActive = (path) => {
 .logo img {
   height: 40px;
 }
+
 nav {
   display: flex;
   gap: 1.5rem;
 }
+
 nav a {
   position: relative;
   color: #fff;
@@ -80,13 +83,15 @@ nav a.active::after {
   background: gold;
 }
 
-/* Mobile styles */
+/* Hamburger Button */
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
   color: white;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 @media (max-width: 768px) {
@@ -95,21 +100,27 @@ nav a.active::after {
   }
 
   nav {
-    position: absolute;
-    top: 64px;
+    position: fixed;
+    top: 0;
     right: 0;
+    height: 100vh;
+    width: 250px;
     background: #000;
     flex-direction: column;
-    gap: 1rem;
-    width: 200px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1.2rem;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   nav.open {
     transform: translateX(0%);
+  }
+
+  nav a {
+    font-size: 1.1rem;
   }
 }
 </style>

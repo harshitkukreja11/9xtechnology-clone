@@ -90,4 +90,16 @@
   margin-top: 2rem;
   width: 40px;
 }
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .scroll-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>

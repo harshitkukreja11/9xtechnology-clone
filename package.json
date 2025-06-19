@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tsparticles/vue3": "^3.0.1",
+    "aos": "^2.3.4",
     "swiper": "^11.2.8",
     "tsparticles": "^3.8.1",
     "tsparticles-engine": "^2.12.0",

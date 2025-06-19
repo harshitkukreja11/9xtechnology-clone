@@ -1,41 +1,36 @@
 <template>
   <section class="services">
-    <div>
-      <img src="https://9xtechnology.com/assets/images/marketting-services.png" alt="services" class="marketing" />
-    </div>
-    <h2 class="section-title">IT SERVICES</h2>
+      <div class="intro-section">
+  <div class="intro-text">
+    <h2 class="section-title">SERVICES WE’RE OFFERING</h2>
+    <p class="section-para">High quality products and<br> services that we stand behind</p>
+  </div>
+  <img src="https://9xtechnology.com/assets/images/robo-hand.png" alt="services" class="marketing" />
+</div>
 
-    <Swiper
-      :modules="[Pagination, Autoplay]"
-      :slides-per-view="3"
-      :space-between="30"
-      :loop="true"
-      :autoplay="{ delay: 2500 }"
-      :pagination="{ clickable: true }"
-      class="carousel"
-    >
-      <SwiperSlide v-for="(service, index) in services" :key="index">
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front">
-              <img :src="service.image" class="card-img" />
-            </div>
-            <div class="flip-back">
-              <h3>{{ service.title }}</h3>
-              <p>{{ service.description }}</p>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
-  </section>
+  <div class="cards-container">
+  <div
+    v-for="(service, index) in services"
+    :key="index"
+    class="flip-card"
+  >
+    <div class="flip-inner">
+      <div class="flip-front">
+        <img :src="service.image" class="card-img" />
+      </div>
+      <div class="flip-back">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+</section>
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 
 const services = [
@@ -113,10 +108,44 @@ const services = [
 </script>
 
 <style scoped>
-.marketing {
-  height: 700px;
-  margin-left: 70px;
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
+
+.intro-text {
+  flex: 1;
+  min-width: 280px;
+  color: white;
+}
+
+.marketing {
+  flex: 1;
+  max-width: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .marketing {
+    max-width: 100%;
+  }
+
+  .section-title {
+    margin-top: 1rem;
+  }
+}
+
 .services {
   padding: 4rem 2rem;
   text-align: center;
@@ -128,13 +157,14 @@ const services = [
 }
 .section-title {
   font-size: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 200px;
+  margin-bottom: 1rem;
+  margin-top: 20px;
   text-align: left;
-  margin-left: 5%;
+  margin-left: 15%;
   color: #C79232; /* gold */
-
-
+}
+.section-para{
+  font-size: 2rem;
 }
 .carousel {
   margin-top: 2rem;
@@ -201,6 +231,15 @@ const services = [
   height: 100%;
   object-fit: cover;
 }
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
 /* Responsive Fixes */
 @media (max-width: 992px) {
   .swiper {
@@ -221,5 +260,10 @@ const services = [
     margin-left: 0;
     text-align: center;
   }
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
 }
 </style>
