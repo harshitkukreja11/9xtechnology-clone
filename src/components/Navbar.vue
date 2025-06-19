@@ -12,9 +12,10 @@
       <nav :class="{ open: isMenuOpen }">
   <router-link to="/" :class="{ active: isActive('/') }" @click="closeMenu">HOME</router-link>
 
-  <a href="About" @click="closeMenu">ABOUT US</a>
-  <a href="Services" @click="closeMenu">SERVICES</a>
-  <a href="Projects" @click="closeMenu">PROJECTS</a>
+ <router-link to="/about" @click="closeMenu" :class="{ active: isActive('/about') }">ABOUT US</router-link>
+<router-link to="/services" @click="closeMenu" :class="{ active: isActive('/services') }">SERVICES</router-link>
+<router-link to="/projects" @click="closeMenu" :class="{ active: isActive('/projects') }">PROJECTS</router-link>
+
   <a href="#careers" @click="closeMenu">CAREERS</a>
   <a href="#contact" @click="closeMenu">CONTACT US</a>
 </nav>
