@@ -15,9 +15,9 @@
  <router-link to="/about" @click="closeMenu" :class="{ active: isActive('/about') }">ABOUT US</router-link>
 <router-link to="/services" @click="closeMenu" :class="{ active: isActive('/services') }">SERVICES</router-link>
 <router-link to="/projects" @click="closeMenu" :class="{ active: isActive('/projects') }">PROJECTS</router-link>
+<router-link to="/careers" @click="closeMenu" :class="{ active: isActive('/careers') }">CAREERS</router-link>
+<router-link to="/contact" @click="closeMenu" :class="{ active: isActive('/contact') }">CONTACT US</router-link>
 
-  <a href="#careers" @click="closeMenu">CAREERS</a>
-  <a href="#contact" @click="closeMenu">CONTACT US</a>
 </nav>
 
     </div>
